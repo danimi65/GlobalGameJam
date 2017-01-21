@@ -10,6 +10,14 @@ h1{
   margin-top: 50px;
 }
 
+#help {
+  color: white;
+}
+
+#score_div {
+  color: white;
+}
+
 #waveContainer {
   background-image: url("/assets/waves.jpg");
   margin-left: 150px;
