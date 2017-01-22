@@ -17,19 +17,20 @@ h1 {
   background-size: 100%;
   width: 1000px;
   height: 520px;
-  position: absolute;
+
 }
 
 #pikachu {
   background-image: url("/assets/pikachu.png");
   background-repeat: no-repeat;
+  top: 400px;
+  left: 0px;
   background-size: 65%;
   height: 120px;
   width: 120px;
   position: relative;
   top: 230px;
-/*    animation: 2s infinite;
-    -webkit-animation: waver 2s infinite;*/
+
 }
 /*@keyframes waver {
     0% {left: 0px;}
@@ -46,16 +47,16 @@ h1 {
 #gyarados {
   background-image: url("/assets/baddie.png");
   background-repeat: no-repeat;
+  bottom: 8%;
   background-size: 100%;
   height: 150px;
   width: 160px;
   position: relative;
   top: 140px;
   left: 140px;
-/*  bottom: 8%;
-*/
 
 }
+
 
 #restart_div{
 /*  height: 100%;
