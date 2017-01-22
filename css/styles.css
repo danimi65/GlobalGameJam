@@ -17,6 +17,7 @@ body {
   height: 520px;
   position: absolute;
 
+
 }
 
 #pikachu {
@@ -29,8 +30,7 @@ body {
   width: 120px;
   position: relative;
   top: 230px;
-    /*animation: 2s infinite;
-    -webkit-animation: waver 2s infinite; */
+
 }
 
 
@@ -44,6 +44,7 @@ body {
   position: relative;
   top: 140px;
   left: 140px;
+
 }
 
 
