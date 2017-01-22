@@ -130,8 +130,19 @@ function repeat() {
 
 
 function stop_the_game(argument) {
-  // body...
+        game_over = true;
+        cancelAnimationFrame(anim_id);
+        cancelAnimationFrame(move_right);
+        cancelAnimationFrame(move_left);
+        cancelAnimationFrame(move_up);
+        cancelAnimationFrame(move_down);
+        restart_div.slideDown();
+        restart_btn.focus();
 }
+
+    restart_btn.click(function () {
+        location.reload();
+    });
 
     function collision($div1, $div2) {
         var x1 = $div1.offset().left;
