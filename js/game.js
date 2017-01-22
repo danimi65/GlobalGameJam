@@ -119,13 +119,13 @@ function repeat() {
 }
 
     function pikachu_down(car){
-        var car_current_top = parseInt(car.css('top'));
-        if(car_current_top > container_height){
-            car_current_top = -200;
+        var pikachu_current_top = parseInt(car.css('top'));
+        if(pikachu_current_top > container_height){
+            pikachu_current_top = -200;
             var car_left = parseInt(Math.random() * (container_width - pikachu_width));
             car.css('left', car_left);
         }
-        car.css('top', car_current_top + speed);
+        car.css('top', pikachu_current_top + speed);
     }
 
 
