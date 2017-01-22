@@ -6,37 +6,53 @@ body {
   color: white;
 }
 
-h1{
+h1 {
 
 }
 
 #waveContainer {
-  position: relative;
   margin-top: 20px;
   background-image: url("/assets/waves.gif");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 1000px;
   height: 520px;
+  position: absolute;
 }
 
-#pikachu{
+#pikachu {
   background-image: url("/assets/pikachu.png");
   background-repeat: no-repeat;
   background-size: 65%;
-
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
+  position: relative;
+    top: 310px;
+    animation: 2s infinite;
+    -webkit-animation: waver 2s infinite;
+}
+@keyframes waver {
+    0% {left: 0px;}
+    50% {left: 100px;}
+    100% {left: 100px;}
 }
 
-#gyarados{
+@-webkit-keyframes waver {
+    0% {left: 0px;}
+    50% {left: 100px;}
+    100% {left: 100px;}
+}
+
+#gyarados {
   background-image: url("/assets/baddie.png");
   background-repeat: no-repeat;
   background-size: 100%;
-/*  bottom: 8%;
-*/
   height: 150px;
   width: 160px;
+  position: relative;
+/*  bottom: 8%;
+*/
+
 }
 
 #restart_div{
