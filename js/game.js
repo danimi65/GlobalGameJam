@@ -1,221 +1,92 @@
-   $(document).on('keydown', function (e) {
-        // if (game_over === false) {
-    switch (e.which){
-    case 37:    //left arrow key
-        $(".pikachu").finish().animate({
-            left: "-=50"
-        });
-        break;
-    case 38:    //up arrow key
-        $(".pikachu").finish().animate({
-            top: "-=50"
-        });
-        break;
-    case 39:    //right arrow key
-        $(".pikachu").finish().animate({
-            left: "+=50"
-        });
-        break;
-    case 40:    //bottom arrow key
-        $(".pikachu").finish().animate({
-            top: "+=50"
-        });
-        break;
-    }
-        // }
+    var anim_id;
+
+    //saving dom objects to variables
+    var container = $('#waveContainer');
+    var pikachu = $('#pikachu');
+
+    var restart_div = $('#restart_div');
+    var restart_btn = $('#restart');
+    var score = $('#score');
+
+    //saving some initial setup
+    var container_left = parseInt(container.css('left'));
+    var container_width = parseInt(container.width());
+    var container_height = parseInt(container.height());
+    var pikachu_width = parseInt(pikachu.width());
+    var pikachu_height = parseInt(pikachu.height());
+
+    //some other declarations
+    var game_over = false;
+
+    var score_counter = 1;
+
+    var speed = 2;
+    var line_speed = 5;
+
+    var move_right = false;
+    var move_left = false;
+    var move_up = false;
+    var move_down = false;
+
+ /* Move the pikachu */
+    $(document).on('keydown', function (e) {
+        if (game_over === false) {
+            var key = e.keyCode;
+            if (key === 37 && move_left === false) {
+                move_left = requestAnimationFrame(left);
+            } else if (key === 39 && move_right === false) {
+                move_right = requestAnimationFrame(right);
+            } else if (key === 38 && move_up === false) {
+                move_up = requestAnimationFrame(up);
+            } else if (key === 40 && move_down === false) {
+                move_down = requestAnimationFrame(down);
+            }
+        }
     });
 
+    $(document).on('keyup', function (e) {
+        if (game_over === false) {
+            var key = e.keyCode;
+            if (key === 37) {
+                cancelAnimationFrame(move_left);
+                move_left = false;
+            } else if (key === 39) {
+                cancelAnimationFrame(move_right);
+                move_right = false;
+            } else if (key === 38) {
+                cancelAnimationFrame(move_up);
+                move_up = false;
+            } else if (key === 40) {
+                cancelAnimationFrame(move_down);
+                move_down = false;
+            }
+        }
+    });
 
+    function left() {
+        if (game_over === false && parseInt(pikachu.css('left')) > 0) {
+            pikachu.css('left', parseInt(pikachu.css('left')) - 5);
+            move_left = requestAnimationFrame(left);
+        }
+    }
+    function right() {
+        if (game_over === false && parseInt(pikachu.css('left')) < container_width - pikachu_width) {
+            pikachu.css('left', parseInt(pikachu.css('left')) + 5);
+            move_right = requestAnimationFrame(right);
+        }
+    }
 
-// let score = 0;
-// let keyUp = true;
-// let keyRight = true;
-// let keyDown = true;
-// let gameOver = false;
+    function up() {
+        if (game_over === false && parseInt(pikachu.css('top')) > 0) {
+            pikachu.css('top', parseInt(pikachu.css('top')) - 3);
+            move_up = requestAnimationFrame(up);
+        }
+    }
 
-// document.getElementById('pikachu').onkeydown = function(event) {
-//   let key = event.keyCode;
-//   // up = 38;
-//   // right = 39;
-//   // down = 40;
-//   if(gameOver === false) {
-//     if(key === 38 && keyUp === true) {
-//       keyUp = requestAnimationFrame(up);
-//     } else if(key === 39 && keyRight === true) {
-//       keyRight = requestAnimationFrame(right);
-//     } else if(key === 40 && keyDown === true) {
-//       keyDown = requestAnimationFrame(down);
-//     }
-//   }
-// };
-
-// document.getElementById('pikachu').onkeyup = function(event) {
-//   let key = event.keyCode;
-//   // up = 38;
-//   // right = 39;
-//   // down = 40;
-//   if(gameOver === false) {
-//     if(key === 38) {
-//       keyUp = cancelAnimationFrame(up);
-//     } else if( key === 39) {
-//       keyRight = cancelAnimationFrame(right);
-//     } else if(key === 40) {
-//       keyDown = cancelAnimationFrame(down);
-//     }
-//   }
-// };
-
-// function moveUp() {
-//   if(gameOver === false) {
-//     keyUp = requestAnimationFrame(up);
-//   }
-// }
-
-// function moveRight() {
-//   if(gameOver === false) {
-//     keyRight = requestAnimationFrame(right);
-//   }
-// }
-
-// function moveDown() {
-//   if(gameOver === false) {
-//     keyDown = requestAnimationFrame(down);
-//   }
-// }
-
-// function endGame() {
-//   gameOver = true;
-//   cancelAnimationFrame(moveUp);
-//   cancelAnimationFrame(moveRight);
-//   cancelAnimationFrame(moveDown);
-// }
-
-
-
-// window.onkeydown = function (e) {
-//   if(!e){
-//     e = window.event;
-//   }
-
-// let score = 0;
-// let key = e.keyCode;
-// let pikachu = document.getElementById("pikachu");
-// let top = parseInt(pikachu.style.top, 10);
-// let left = parseInt(pikachu.style.left, 10);
-
-// if(key === 37 ) {
-//   if(left > 0){
-//     pikachu.style.left = left - 10 + 'px';
-//   }
-// } else if (key == 38){
-//   if(top > 0){
-//     pikachu.style.top = top - 10 + 'px';
-//   }
-// }else if( key === 39 ){
-//   if(left+pikachu.width+10 < window.innerWidth){
-//     pikachu.style.left = left + 10 + 'px';
-//   }
-// }else if (key === 40){
-//   if(top.pikachu.height+ 10 < window.innerHeight){
-//     pikachu.style.top = top + 10 + 'px';
-//   }
-// }
-
-
-
-// };
-// var jsdom = require("jsdom").jsdom;
-// global.$ = require('jquery/dist/jquery')(jsdom().createWindow());
-
-// let keyUp = false;
-// let keyRight = false;
-// let keyDown = false;
-// let gameOver = false;
-
-// let move_up = false;
-// let move_right = false;
-// let move_down = false;
-
-// $(document).on('keydown', function(event){
-// let score = 0;
-// let keyUp = true;
-// let keyRight = true;
-// let keyDown = true;
-// let gameOver = false;
-
-// // document.getElementById('pikachu').onkeydown = function(event) {
-//   let key = event.keyCode;
-//   // up = 38;
-//   // right = 39;
-//   // down = 40;
-//   if(gameOver === false) {
-
-//     if(key === 38 && move_up === false) {
-//       move_up = requestAnimationFrame(moveUp);
-//     } else if( key === 39 && move_right === false) {
-//       move_right = requestAnimationFrame(moveRight);
-//     } else if(key === 40 && move_down) {
-//       move_down = requestAnimationFrame(moveDown);
-
-//     // if(key === 38 && keyUp === true) {
-//     //   keyUp = requestAnimationFrame(up);
-//     // } else if(key === 39 && keyRight === true) {
-//     //   keyRight = requestAnimationFrame(right);
-//     // } else if(key === 40 && keyDown === true) {
-//     //   keyDown = requestAnimationFrame(down);
-
-//     }
-//   }
-// });
-
-
-// $(document).on('keyup', function(event){
-//   let key = event.keyCode;
-
-// // document.getElementById('pikachu').onkeyup = function(event) {
-// //   let key = event.keyCode;
-//   // up = 38;
-//   // right = 39;
-//   // down = 40;
-//   if(gameOver === false) {
-//     if(key === 38) {
-//       keyUp = cancelAnimationFrame(up);
-//     } else if( key === 39) {
-//       keyRight = cancelAnimationFrame(right);
-//     } else if(key === 40) {
-//       keyDown = cancelAnimationFrame(down);
-//     }
-//   }
-
-// });
-
-
-
-
-// function moveUp() {
-//   if(gameOver === false && parseInt(pikachu.css('top')) > 0) {
-//     pikachu.css('top', parseInt(pikachu.css('top')) -3);
-//     move_up = requestAnimationFrame(moveUp);
-//   }
-// }
-
-// function moveRight() {
-//   if(gameOver === false) {
-//     pikachu.css('left', parseInt(pikachu.css('left')) +5);
-//     move_right = requestAnimationFrame(moveRight);
-//   }
-// }
-
-// function moveDown() {
-//   if(gameOver === false) {
-//     keyDown = requestAnimationFrame(moveDown);
-//   }
-// }
-
-// function endGame() {
-//   gameOver = true;
-//   cancelAnimationFrame(moveUp);
-//   cancelAnimationFrame(moveRight);
-//   cancelAnimationFrame(moveDown);
-// }
+    function down() {
+        if (game_over === false && parseInt(pikachu.css('top')) < container_height - pikachu_height) {
+            pikachu.css('top', parseInt(pikachu.css('top')) + 3);
+            move_down = requestAnimationFrame(down);
+        }
+    }
 
