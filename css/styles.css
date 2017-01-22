@@ -27,11 +27,11 @@ h1 {
   height: 120px;
   width: 120px;
   position: relative;
-    top: 310px;
-    animation: 2s infinite;
-    -webkit-animation: waver 2s infinite;
+  top: 230px;
+/*    animation: 2s infinite;
+    -webkit-animation: waver 2s infinite;*/
 }
-@keyframes waver {
+/*@keyframes waver {
     0% {left: 0px;}
     50% {left: 100px;}
     100% {left: 100px;}
@@ -41,7 +41,7 @@ h1 {
     0% {left: 0px;}
     50% {left: 100px;}
     100% {left: 100px;}
-}
+}*/
 
 #gyarados {
   background-image: url("/assets/baddie.png");
@@ -50,6 +50,8 @@ h1 {
   height: 150px;
   width: 160px;
   position: relative;
+  top: 140px;
+  left: 140px;
 /*  bottom: 8%;
 */
 
