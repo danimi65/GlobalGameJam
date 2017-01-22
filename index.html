@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
 
     <title>Global Game Jam</title>
-    <h1>Swim Away, Pikachu!</h1>
+    <h1>Surfs Up, Pikachu!</h1>
 
   </head>
   <body>
+
     <div id="help">
       <p>Controls: Right, Left, Up & Down arrow keys.</p>
     </div>
@@ -18,28 +19,21 @@
       Score: <span id="score">0</span>
     </div>
 
+    <div id ="waveContainer">
 
-    <div id = "waveContainer">
+      <div id="pikachu" class="pikachu"></div>
 
-
-      <div id = "pikachu" class = "pikachu">
-      </div>
-
-      <div id = "gyarados" class = 'gyarados'>
-      </div>
+      <div id="gyarados" class="gyarados"></div>
 
     <div id="restart_div">
       <button id="restart">
         Restart<br>
         <small class="small_text">(press Enter)</small>
-      </button>
+      </button>  
     </div>
     </div>
-
-  </div>
-
-
-     <script src="jquery.min.js"></script>
+    
+    <script src="jquery.min.js"></script>
     <script src="js/game.js"></script>
   </body>
 </html>

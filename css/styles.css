@@ -8,12 +8,10 @@ body {
 
 h1 {
   padding-left: 350px;
-
 }
 
-p{
+p {
   padding-left: 350px;
-
 }
 
 #waveContainer {
@@ -23,7 +21,6 @@ p{
   background-size: 100%;
   width: 1000px;
   height: 520px;
-
 }
 
 #pikachu {
@@ -36,7 +33,6 @@ p{
   width: 72px;
   position: relative;
   top: 230px;
-
 }
 
 
@@ -50,7 +46,6 @@ p{
   position: relative;
   top: 140px;
   left: 140px;
-
 }
 
 #poliwag {
@@ -97,4 +92,3 @@ p{
   border-radius: 10px;
   box-shadow: 4px 4px 0px 1px #808080;
 }
-
