@@ -1,21 +1,37 @@
 let score = 0;
-let keyUp = false;
-let keyRight = false;
-let keyDown = false;
+let keyUp = true;
+let keyRight = true;
+let keyDown = true;
 let gameOver = false;
 
-document.onkeypress = function(event) {
+document.getElementById('pikachu').onkeydown = function(event) {
+  let key = event.keyCode;
+  // up = 38;
+  // right = 39;
+  // down = 40;
+  if(gameOver === false) {
+    if(key === 38 && keyUp === true) {
+      keyUp = requestAnimationFrame(up);
+    } else if(key === 39 && keyRight === true) {
+      keyRight = requestAnimationFrame(right);
+    } else if(key === 40 && keyDown === true) {
+      keyDown = requestAnimationFrame(down);
+    }
+  }
+};
+
+document.getElementById('pikachu').onkeyup = function(event) {
   let key = event.keyCode;
   // up = 38;
   // right = 39;
   // down = 40;
   if(gameOver === false) {
     if(key === 38) {
-      keyUp = requestAnimationFrame(up);
+      keyUp = cancelAnimationFrame(up);
     } else if( key === 39) {
-      keyRight = requestAnimationFrame(right);
+      keyRight = cancelAnimationFrame(right);
     } else if(key === 40) {
-      keyDown = requestAnimationFrame(down);
+      keyDown = cancelAnimationFrame(down);
     }
   }
 };
