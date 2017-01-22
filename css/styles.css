@@ -7,6 +7,12 @@ body {
 }
 
 h1 {
+  padding-left: 350px;
+
+}
+
+p{
+  padding-left: 350px;
 
 }
 
@@ -32,16 +38,7 @@ h1 {
   top: 230px;
 
 }
-/*@keyframes waver {
-    0% {left: 0px;}
-    50% {left: 100px;}
-    100% {left: 100px;}
-}
-@-webkit-keyframes waver {
-    0% {left: 0px;}
-    50% {left: 100px;}
-    100% {left: 100px;}
-}*/
+
 
 #gyarados {
   background-image: url("/assets/baddie.png");
@@ -60,19 +57,17 @@ h1 {
 #restart_div {
     height: 88px;
     width: 1000px;
-  /*  background-color: #292929;*/
     color: white;
     font-family: sans-serif;
     font-size: 40px;
     text-align: center;
     display: none;
-   /* margin-bottom: 300px;*/
 }
 
 #restart{
     border: none;
-    color: white;
-    background-color: #7EA8DE;
+    color: #ECEEF3;
+    background-color: #365DA1;
     font-size: 30px;
 }
 
@@ -81,10 +76,12 @@ h1 {
 }
 
 #score_div {
-  color: black;
+  color: #0C30A6;
+  padding: 10px;
   font-size: 35px;
   width: 150px;
   background-color: white;
+  border-radius: 10px;
   box-shadow: 4px 4px 0px 1px #808080;
 }
 
