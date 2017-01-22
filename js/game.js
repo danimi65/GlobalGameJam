@@ -1,3 +1,4 @@
+
 //jshint esversion:6
 
 
@@ -46,33 +47,59 @@ let move_right = false;
 let move_down = false;
 
 $(document).on('keydown', function(event){
+let score = 0;
+let keyUp = true;
+let keyRight = true;
+let keyDown = true;
+let gameOver = false;
+
+// document.getElementById('pikachu').onkeydown = function(event) {
   let key = event.keyCode;
   // up = 38;
   // right = 39;
   // down = 40;
   if(gameOver === false) {
+
     if(key === 38 && move_up === false) {
       move_up = requestAnimationFrame(moveUp);
     } else if( key === 39 && move_right === false) {
       move_right = requestAnimationFrame(moveRight);
     } else if(key === 40 && move_down) {
       move_down = requestAnimationFrame(moveDown);
+
+    // if(key === 38 && keyUp === true) {
+    //   keyUp = requestAnimationFrame(up);
+    // } else if(key === 39 && keyRight === true) {
+    //   keyRight = requestAnimationFrame(right);
+    // } else if(key === 40 && keyDown === true) {
+    //   keyDown = requestAnimationFrame(down);
+
     }
   }
 });
 
+
 $(document).on('keyup', function(event){
   let key = event.keyCode;
+
+// document.getElementById('pikachu').onkeyup = function(event) {
+//   let key = event.keyCode;
+  // up = 38;
+  // right = 39;
+  // down = 40;
   if(gameOver === false) {
-    if(key === 38 && move_up === false) {
-      move_up = false;
-    } else if( key === 39 && move_right === false) {
-      move_right = false;
-    } else if(key === 40 && move_down) {
-      move_down = false;
+    if(key === 38) {
+      keyUp = cancelAnimationFrame(up);
+    } else if( key === 39) {
+      keyRight = cancelAnimationFrame(right);
+    } else if(key === 40) {
+      keyDown = cancelAnimationFrame(down);
     }
   }
+
 });
+
+
 
 
 function moveUp() {
