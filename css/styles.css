@@ -6,9 +6,7 @@ body {
   color: white;
 }
 
-h1 {
 
-}
 
 #waveContainer {
   margin-top: 20px;
@@ -17,11 +15,8 @@ h1 {
   background-size: 100%;
   width: 1000px;
   height: 520px;
-<<<<<<< HEAD
-
-=======
   position: absolute;
->>>>>>> 91a67565bf3f729ceef11c7803f05509b6726659
+
 }
 
 #pikachu {
@@ -34,20 +29,10 @@ h1 {
   width: 120px;
   position: relative;
   top: 230px;
-    animation: 2s infinite;
-    -webkit-animation: waver 2s infinite;
-}
-@keyframes waver {
-    0% {left: 0px;}
-    50% {left: 100px;}
-    100% {left: 100px;}
+    /*animation: 2s infinite;
+    -webkit-animation: waver 2s infinite; */
 }
 
-@-webkit-keyframes waver {
-    0% {left: 0px;}
-    50% {left: 100px;}
-    100% {left: 100px;}
-}
 
 #gyarados {
   background-image: url("/assets/baddie.png");
