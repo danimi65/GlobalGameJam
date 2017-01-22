@@ -4,6 +4,8 @@
     var container = $('#waveContainer');
     var pikachu = $('#pikachu');
 
+    var gyarados = $('#gyarados');
+
     var restart_div = $('#restart_div');
     var restart_btn = $('#restart');
     var score = $('#score');
@@ -21,7 +23,6 @@
     var score_counter = 1;
 
     var speed = 2;
-    var line_speed = 5;
 
     var move_right = false;
     var move_left = false;
@@ -90,3 +91,62 @@
         }
     }
 
+/* Move the cars and lines */
+anim_id = requestAnimationFrame(repeat);
+
+function repeat() {
+
+
+ if (game_over === false) {
+     if (collision(pikachu,gyarados)){
+         stop_the_game();
+     }
+
+     score_counter++;
+
+     if(score_counter % 20 === 0){
+         score.text(parseInt(score.text()) + 1);
+     }
+     if(score_counter % 500 === 0){
+       speed++;
+     }
+
+     pikachu_down(gyarados);
+
+
+     anim_id = requestAnimationFrame(repeat);
+ }
+}
+
+    function pikachu_down(car){
+        var car_current_top = parseInt(car.css('top'));
+        if(car_current_top > container_height){
+            car_current_top = -200;
+            var car_left = parseInt(Math.random() * (container_width - pikachu_width));
+            car.css('left', car_left);
+        }
+        car.css('top', car_current_top + speed);
+    }
+
+
+function stop_the_game(argument) {
+  // body...
+}
+
+    function collision($div1, $div2) {
+        var x1 = $div1.offset().left;
+        var y1 = $div1.offset().top;
+        var h1 = $div1.outerHeight(true);
+        var w1 = $div1.outerWidth(true);
+        var b1 = y1 + h1;
+        var r1 = x1 + w1;
+        var x2 = $div2.offset().left;
+        var y2 = $div2.offset().top;
+        var h2 = $div2.outerHeight(true);
+        var w2 = $div2.outerWidth(true);
+        var b2 = y2 + h2;
+        var r2 = x2 + w2;
+
+        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+        return true;
+    }
