@@ -6,7 +6,9 @@ body {
   color: white;
 }
 
+h1 {
 
+}
 
 #waveContainer {
   margin-top: 20px;
@@ -15,8 +17,6 @@ body {
   background-size: 100%;
   width: 1000px;
   height: 520px;
-  position: absolute;
-
 
 }
 
@@ -25,14 +25,23 @@ body {
   background-repeat: no-repeat;
   top: 400px;
   left: 0px;
-  background-size: 65%;
-  height: 120px;
-  width: 120px;
+  background-size: 104%;
+  height: 68px;
+  width: 72px;
   position: relative;
   top: 230px;
 
 }
-
+/*@keyframes waver {
+    0% {left: 0px;}
+    50% {left: 100px;}
+    100% {left: 100px;}
+}
+@-webkit-keyframes waver {
+    0% {left: 0px;}
+    50% {left: 100px;}
+    100% {left: 100px;}
+}*/
 
 #gyarados {
   background-image: url("/assets/baddie.png");
@@ -48,17 +57,23 @@ body {
 }
 
 
-#restart_div{
-/*  height: 100%;
-  width: 100%;
-  background-color: #292929;
-  color: white;
-  font-size: 40px;
-  */
+#restart_div {
+    height: 88px;
+    width: 1000px;
+  /*  background-color: #292929;*/
+    color: white;
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+    display: none;
+   /* margin-bottom: 300px;*/
 }
 
 #restart{
-
+    border: none;
+    color: white;
+    background-color: #7EA8DE;
+    font-size: 30px;
 }
 
 .small_text{
@@ -73,6 +88,3 @@ body {
   box-shadow: 4px 4px 0px 1px #808080;
 }
 
-#help {
-
-}

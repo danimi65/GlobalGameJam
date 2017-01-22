@@ -1,45 +1,10 @@
-
-//jshint esversion:6
-
-// let speed = 2;
-
-//    $(document).on('keydown', function (e) {
-//         // if (game_over === false) {
-//     switch (e.which){
-//     case 37:    //left arrow key
-//         $(".pikachu").finish().animate({
-//             left: "-=50"
-//         });
-//         break;
-//     case 38:    //up arrow key
-//         $(".pikachu").finish().animate({
-//             top: "-=50"
-//         });
-//         break;
-//     case 39:    //right arrow key
-//         $(".pikachu").finish().animate({
-//             left: "+=50"
-//         });
-//         break;
-//     case 40:    //bottom arrow key
-//         $(".pikachu").finish().animate({
-//             top: "+=50"
-//         });
-//         break;
-//     }
-//         // }
-//     });
-
-
-
     var anim_id;
 
     //saving dom objects to variables
     var container = $('#waveContainer');
     var pikachu = $('#pikachu');
+
     var gyarados = $('#gyarados');
-    var gyaradosOne = $('#gyarados');
-     var gyaradosTwo = $('#gyarados');
 
     var restart_div = $('#restart_div');
     var restart_btn = $('#restart');
@@ -58,7 +23,6 @@
     var score_counter = 1;
 
     var speed = 2;
-    var line_speed = 5;
 
     var move_right = false;
     var move_left = false;
@@ -127,42 +91,45 @@
         }
     }
 
-    function gyarados_down(car){
-        var car_current_top = parseInt(car.css('top'));
-        if(car_current_top > container_height){
-            car_current_top = -200;
-            var car_left = parseInt(Math.random() * (container_width - car_width));
-            car.css('left', car_left);
-        }
-        car.css('top', car_current_top + speed);
-    }
+/* Move the cars and lines */
+anim_id = requestAnimationFrame(repeat);
 
 function repeat() {
-        if (game_over === false) {
-            if (collision(pikachu, gyarados) || collision(pikachu, gyaradosOne) || collision(pikachu, gyaradosTwo)) {
-                stop_the_game();
-            }
-            
-            score_counter++;
-            
-            if(score_counter % 20 == 0){
-                score.text(parseInt(score.text()) + 1);
-            }
-            if(score_counter % 500 == 0){
-              speed++;
-              line_speed++;
-            }
-            
-            car_down(car_1);   
-            car_down(car_2);
-            car_down(car_3);
-            
 
-            anim_id = requestAnimationFrame(repeat);
+
+ if (game_over === false) {
+     if (collision(pikachu,gyarados)){
+         stop_the_game();
+     }
+
+     score_counter++;
+
+     if(score_counter % 20 === 0){
+         score.text(parseInt(score.text()) + 1);
+     }
+     if(score_counter % 500 === 0){
+       speed++;
+     }
+
+     pikachu_down(gyarados);
+
+
+     anim_id = requestAnimationFrame(repeat);
+ }
+}
+
+    function pikachu_down(pikachu){
+        var pikachu_current_top = parseInt(pikachu.css('top'));
+        if(pikachu_current_top > container_height){
+            pikachu_current_top = -200;
+            var pikachu_left = parseInt(Math.random() * (container_width - pikachu_width));
+            pikachu.css('left', pikachu_left);
         }
+        pikachu.css('top', pikachu_current_top + speed);
     }
 
-        function stop_the_game() {
+
+function stop_the_game(argument) {
         game_over = true;
         cancelAnimationFrame(anim_id);
         cancelAnimationFrame(move_right);
@@ -171,8 +138,12 @@ function repeat() {
         cancelAnimationFrame(move_down);
         restart_div.slideDown();
         restart_btn.focus();
-    }
-    
+}
+
+    restart_btn.click(function () {
+        location.reload();
+    });
+
     function collision($div1, $div2) {
         var x1 = $div1.offset().left;
         var y1 = $div1.offset().top;
@@ -189,4 +160,4 @@ function repeat() {
 
         if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
         return true;
-
+    }
