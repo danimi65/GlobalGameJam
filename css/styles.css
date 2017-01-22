@@ -53,6 +53,19 @@ p{
 
 }
 
+#poliwag {
+  background-image: url("/assets/poliwag.png");
+  background-repeat: no-repeat;
+  bottom: 8%;
+  background-size: 100%;
+  height: 150px;
+  width: 160px;
+  position: relative;
+  top: 140px;
+  left: 140px;
+
+}
+
 
 #restart_div {
     height: 88px;

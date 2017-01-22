@@ -5,6 +5,8 @@
     var pikachu = $('#pikachu');
 
     var gyarados = $('#gyarados');
+     var gyaradosOne = $('#gyarados');
+      var gyaradosTwo = $('#gyarados');
 
     var restart_div = $('#restart_div');
     var restart_btn = $('#restart');
@@ -98,7 +100,7 @@ function repeat() {
 
 
  if (game_over === false) {
-     if (collision(pikachu,gyarados)){
+     if (collision(pikachu,gyarados) || collision(pikachu, gyaradosOne) || collision(pikachu, gyaradosTwo)){
          stop_the_game();
      }
 
@@ -111,21 +113,25 @@ function repeat() {
        speed++;
      }
 
-     pikachu_down(gyarados);
+     gyarados_down(gyarados);
+     gyarados_down(gyaradosOne);
+     gyarados_down(gyaradosTwo);
+
+
 
 
      anim_id = requestAnimationFrame(repeat);
  }
 }
 
-    function pikachu_down(pikachu){
-        var pikachu_current_top = parseInt(pikachu.css('top'));
+    function gyarados_down(gyarados){
+        var pikachu_current_top = parseInt(gyarados.css('top'));
         if(pikachu_current_top > container_height){
             pikachu_current_top = -200;
-            var pikachu_left = parseInt(Math.random() * (container_width - pikachu_width));
-            pikachu.css('left', pikachu_left);
+            var gyarados_left = parseInt(Math.random() * (container_width - pikachu_width));
+            gyarados.css('left', gyarados_left);
         }
-        pikachu.css('top', pikachu_current_top + speed);
+        gyarados.css('top', pikachu_current_top + speed);
     }
 
 
