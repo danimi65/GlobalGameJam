@@ -19,34 +19,31 @@ h1{
 }
 
 #waveContainer {
-<<<<<<< HEAD
   background-image: url(http://www.radicalfishgames.com/wp-content/uploads/waves.gif);
-=======
-  background-image: url("/assets/waves.jpg");
->>>>>>> ccf0bb44bc13ad7902d7b13c3d0206c5c1dc3429
   margin-top: 100px;
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
-<<<<<<< HEAD
   height: 1000px;
-=======
-  height: 700px;
->>>>>>> ccf0bb44bc13ad7902d7b13c3d0206c5c1dc3429
+
 }
 
 #pikachu{
   background-image: url("/assets/pikachu.png");
   background-repeat: no-repeat;
+  top: 400px;
+  /*right: 450px;*/
+  left: 0px;
+  position: absolute;
   height: 120px;
   width: 120px;
 }
 
-#gyarados{
+/*#gyarados{
   background-image: url("/assets/baddie.png");
   background-repeat: no-repeat;
   bottom: 8%;
   height: 300px;
   width: 350px;
-}
+}*/
 
