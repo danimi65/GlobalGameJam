@@ -20,3 +20,17 @@ h1{
   height: 700px;
 }
 
+#pikachu{
+  background-image: url("/assets/pikachu.png");
+  background-repeat: no-repeat;
+  height: 120px;
+  width: 120px;
+}
+
+#gyarados{
+  background-image: url("/assets/baddie.png");
+  background-repeat: no-repeat;
+  bottom: 8%;
+  height: 300px;
+  width: 350px;
+}
