@@ -1,30 +1,23 @@
-
-
 body {
+  height: 100%;
+  width: 100%;
   background-color: #7EA8DE;
+  font-family: sans-serif;
+  color: white;
 }
 
 h1{
-  color: white;
-  margin-left: 360px;
-  margin-top: 50px;
-}
 
-#help {
-  color: white;
-}
-
-#score_div {
-  color: white;
 }
 
 #waveContainer {
-  background-image: url(http://www.radicalfishgames.com/wp-content/uploads/waves.gif);
-  margin-top: 100px;
+  position: relative;
+  margin-top: 20px;
+  background-image: url("/assets/waves.gif");
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 100%;
-  height: 1000px;
+  width: 1000px;
+  height: 520px;
 
 }
 
@@ -32,18 +25,48 @@ h1{
   background-image: url("/assets/pikachu.png");
   background-repeat: no-repeat;
   top: 400px;
-  /*right: 450px;*/
   left: 0px;
-  position: absolute;
-  height: 120px;
-  width: 120px;
+  background-size: 65%;
+  height: 100px;
+  width: 100px;
 }
 
-/*#gyarados{
+#gyarados{
   background-image: url("/assets/baddie.png");
   background-repeat: no-repeat;
-  bottom: 8%;
-  height: 300px;
-  width: 350px;
-}*/
 
+  bottom: 8%;
+  height: 150px;
+  width: 100px;
+  background-size: 100%;
+}
+
+
+#restart_div{
+/*  height: 100%;
+  width: 100%;
+  background-color: #292929;
+  color: white;
+  font-size: 40px;
+  */
+}
+
+#restart{
+
+}
+
+.small_text{
+  font-size: 15px;
+}
+
+#score_div {
+  color: black;
+  font-size: 35px;
+  width: 150px;
+  background-color: white;
+  box-shadow: 4px 4px 0px 1px #808080;
+}
+
+#help {
+
+}
