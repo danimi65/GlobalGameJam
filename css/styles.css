@@ -10,13 +10,29 @@ h1{
   margin-top: 50px;
 }
 
+#help {
+  color: white;
+}
+
+#score_div {
+  color: white;
+}
+
 #waveContainer {
+<<<<<<< HEAD
   background-image: url(http://www.radicalfishgames.com/wp-content/uploads/waves.gif);
+=======
+  background-image: url("/assets/waves.jpg");
+>>>>>>> ccf0bb44bc13ad7902d7b13c3d0206c5c1dc3429
   margin-top: 100px;
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
+<<<<<<< HEAD
   height: 1000px;
+=======
+  height: 700px;
+>>>>>>> ccf0bb44bc13ad7902d7b13c3d0206c5c1dc3429
 }
 
 #pikachu{
@@ -33,3 +49,4 @@ h1{
   height: 300px;
   width: 350px;
 }
+
