@@ -16,7 +16,7 @@ p {
 
 #waveContainer {
   margin-top: 20px;
-  background-image: url("/assets/waves.gif");
+  background-image: url("../assets/waves.gif");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 1000px;
@@ -24,7 +24,7 @@ p {
 }
 
 #pikachu {
-  background-image: url("/assets/pikachu.png");
+  background-image: url("../assets/pikachu.png");
   background-repeat: no-repeat;
   top: 400px;
   left: 0px;
@@ -37,7 +37,7 @@ p {
 
 
 #gyarados {
-  background-image: url("/assets/baddie.png");
+  background-image: url("../assets/baddie.png");
   background-repeat: no-repeat;
   bottom: 8%;
   background-size: 100%;
